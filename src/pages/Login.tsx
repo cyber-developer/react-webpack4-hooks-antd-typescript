@@ -36,7 +36,7 @@ const Login = () => {
       )
       case 'button':
       return (
-          <FormButton
+        <FormButton
           layout={tailLayout}
           name={field.name}
           type={field.type}
