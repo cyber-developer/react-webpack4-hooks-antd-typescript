@@ -1,13 +1,15 @@
 import React from 'react';
 import { renderRoutes } from 'react-router-config';
 
-import Home from '../components/App';
+import Dashboard from '../pages/Dashboard';
+import NotFound from '../pages/NotFound';
+import Login from '../pages/Login';
 
 const Root = ({ route }: any) => (
-  <div>
-    <h1>Root</h1>
+  <div className='main'>
+    {/* <h1>Root</h1> */}
     {/* child routes won't render without this */}
-    {renderRoutes(route.routes, { name: "Hello world" })}
+    {renderRoutes(route.routes, { name: "Dashboard" })}
   </div>
 );
 
@@ -39,12 +41,15 @@ const routes = [
       {
         path: "/",
         exact: true,
-        component: Home
+        component: Dashboard
       },
       {
-        path: "/dashboard",
+        path: "/login",
         exact: true,
-        component: Home
+        component: Login
+      },
+      {
+        component: NotFound
       }
       // {
       //   path: "/child/:id",
